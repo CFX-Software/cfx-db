@@ -1,0 +1,46 @@
+{
+  "name": "cfx-db",
+  "version": "1.1.0",
+  "description": "Native Convex database integration for FiveM with real-time sync",
+  "type": "module",
+  "fivemIgnore": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:watch": "node scripts/build.js --watch",
+    "convex:dev": "npx convex dev",
+    "convex:deploy": "npx convex deploy",
+    "convex:push": "npx convex deploy --cmd 'npm run build'",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint server/**/*.ts",
+    "migrate:status": "bun run server/cli/migrate.ts status",
+    "migrate:list": "bun run server/cli/migrate.ts list",
+    "migrate:create": "bun run server/cli/migrate.ts create",
+    "migrate:record": "bun run server/cli/migrate.ts record"
+  },
+  "dependencies": {
+    "@convex-dev/action-retrier": "^0.3.0",
+    "@convex-dev/sharded-counter": "^0.2.0",
+    "convex": "^1.17.0",
+    "dotenv": "^17.2.3",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.0"
+  },
+  "keywords": [
+    "fivem",
+    "cfx",
+    "convex",
+    "database",
+    "realtime",
+    "sync"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CFX-Software/cfx-db.git"
+  }
+}
